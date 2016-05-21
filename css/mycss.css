@@ -5,6 +5,7 @@ body,div,h1,h2,h3,ul,li,span,a,i,input{
     font-size:12px;
     font-family: Arial, Verdana, 宋体;
     color:#666;
+    -webkit-user-select: none;
 }
 body{
     background:#ffffff;
@@ -30,6 +31,120 @@ a:hover,a:link,a:active,a:visited{
     float:right;
 }
 
+/*最右边固定栏*/
+.elevator{
+    position: fixed;
+    top:0;
+    right:-270px;
+    width:270px;
+    height:100%;
+    background: #eceaea;
+    border-left:6px solid #7a6e6e;
+    transition: right .2s ease-in-out .1s; ;
+    z-index: 30;
+}
+.elevator .mainBar{
+    position: relative;
+    background:#eceaea ;
+    width:100%;
+    height:100%;
+    color: red;
+    z-index: 3;
+}
+
+.elevator .bars{
+
+    position: absolute;
+    top:344px;
+    left:-35px;
+}
+.elevator .bars li{
+    position: relative;
+    margin-bottom:3px;
+    width:33px;
+    height:35px;
+    cursor: pointer;
+}
+.elevator .top{
+    top:250px;
+}
+.elevator .feedback{
+    top:250px;
+}
+.elevator .bars li >div{
+    width:100%;
+    height:100%;
+    border:1px solid #7a6e6e;
+    position: relative;
+    background: #7a6e6e;
+    border-radius: 3px;
+    z-index: 2;
+}
+.elevator .bars li em{
+    position: absolute;
+    width:62px;
+    height:35px;
+    left:10px;
+    display: block;
+    /*left:-62px;*/
+    top:0;
+    border:1px solid #c81623;
+    text-align: center;
+    line-height:33px;
+    border-radius: 3px;
+    font-style: normal;
+    background: #c81623;
+    color: #ffffff;
+    z-index:1;
+    transition: left .1s ease-in-out .1s;
+}
+.elevator .bars li em.hover{
+    transform:translate(-60px,0);
+}
+.elevator .bars li div i{
+    display: block;
+    height: 100%;
+    width:100%;
+    background-image:url('../img/toolbars.png');
+    background-repeat: no-repeat;
+}
+.elevator .bars li .icon1{
+    background-position: -90px -175px;
+}
+.elevator .bars li .icon2{
+    background-position: -51px 0;
+}
+.elevator .bars li .icon3{
+    background-position: -51px -50px;
+}
+.elevator .bars li .icon4{
+    background-position: -51px -101px;
+}
+.elevator .bars li .icon5{
+    background-position: -191px -151px;
+}
+.elevator .bars li .icon6{
+    background-position: -51px -152px;
+}
+.elevator .bars li .icon7{
+    background-position: -51px -251px;
+}
+.elevator .bars li .icon8{
+    background-position: -51px -303px;
+}
+
+
+
+.elevator .bars li div.bg{
+    background: #c81623;
+    border-color:#c81623;
+}
+/*最右边固定栏结束*/
+
+
+
+
+/*顶部开始*/
 
 .hbg{
     background:#f1f1f1;
@@ -45,6 +160,8 @@ a:hover,a:link,a:active,a:visited{
 }
 .hl li{
     position:relative;
+    border-left:1px solid #f1f1f1;
+    border-right:1px solid #f1f1f1;
     z-index: 20;
 }
 
@@ -81,10 +198,18 @@ a:hover,a:link,a:active,a:visited{
 }
 .hl li span{
     height:30px;
-    width:74px;
+    width:72px;
     display:inline-block;
     padding:0 6px 0 10px;
     position:relative;
+}
+.hl li .hidden .fh{
+    position: absolute;
+    left:0;
+    top:-2px;
+    height:3px;
+    width:72px;
+    background: #ffffff;
 }
 
 
@@ -93,13 +218,15 @@ a:hover,a:link,a:active,a:visited{
     width:15px;
     height:7px;
     top:12px;
-    left:76px;
+    left:72px;
     overflow: hidden;
     transition: all .1s ease-in 0s;;
     -webkit-transition: all .1s ease-in 0s;;
 }
-.hl li .icon:hover{
+.hl li .icon.hover{
     padding:0 1px;
+    transform-origin:50% 50%;
+    -webkit-transform-origin:50% 50%;
     -webkit-transform:rotate(180deg);
     transform: rotate(180deg);
 }
@@ -108,7 +235,7 @@ a:hover,a:link,a:active,a:visited{
     font: 400 15px/15px consolas;
     position: absolute;
     top: -6px;
-    left:-2px;
+    left:0;
     text-decoration: none;
 }
 .hr li{
@@ -120,6 +247,14 @@ a:hover,a:link,a:active,a:visited{
     text-indent: 6px;
     border-left:1px solid #f1f1f1;
     border-right:1px solid #f1f1f1;
+}
+.hr li .hidden .fh{
+    position: absolute;
+    left:0;
+    top:-2px;
+    height:3px;
+    width:88px;
+    background: #ffffff;
 }
 
 .hr li a.bg{
@@ -170,6 +305,9 @@ a:hover,a:link,a:active,a:visited{
 .hr li.iph{
      padding:0 6px 0 16px;
  }
+.hr li.iph .fh{
+    width:104px;
+}
 .hr li a:hover{
     color:#c81623;
 }
@@ -244,6 +382,8 @@ a:hover,a:link,a:active,a:visited{
     border:1px solid #ddd;
     padding:0 10px 10px 0;
 }
+
+
 .hr li .server .its{
     padding-left:10px;
     width:70px;
@@ -271,17 +411,27 @@ a:hover,a:link,a:active,a:visited{
     border:1px solid #ddd;
     background:#fff;
 }
+
 .hr li .nav .its{
     width:86px;
     height:24px;
     line-height:24px;
     float:left;
 }
+
 .hr li .nav .tp{
     font-size:14px;
     line-height:28px;
     font-weight: 700;
 
+}
+.hr .nav .hf{
+    position: absolute;
+    right:0;
+    top:-2px;
+    height:3px;
+    width:88px;
+    background: #ffffff;
 }
 .hr li .nav>div{
     padding-left:20px;
@@ -457,11 +607,19 @@ a:hover,a:link,a:active,a:visited{
     background-color: #f9f9f9;
     z-index: 2;
 }
+
 .shopping i{
     position:absolute;
     display:block;
 }
-
+.shopping i.top{
+    display: none;
+    top:34px;
+    left:0;
+    width:140px;
+    height: 4px;
+    background: #ffffff;
+}
 .shopping i.left{
     top:8px;
     right:8px;
@@ -483,11 +641,7 @@ a:hover,a:link,a:active,a:visited{
 }
 /*购物车隐藏区域*/
 
-.shoppingDown{
-    border-bottom:#fff;
-    background:#fff;
-    height:36px;
-}
+
 
 .num{
     display:none;
@@ -513,7 +667,11 @@ a:hover,a:link,a:active,a:visited{
     height:49px;
     background: url("../img/product_home_1.0.0.png") no-repeat 0 -438px;
 }
-
+.shoppingDown{
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    background:#fff;
+    height:34px;
+}
 
 /*选项卡侧边*/
 #nav{
@@ -909,9 +1067,9 @@ a:hover,a:link,a:active,a:visited{
     text-align: center;
     cursor: pointer;
 }
-.leftBar- .bottom  li:nth-child(1) a{
-    padding-top:0;
-}
+/*.leftBar- .bottom  li:nth-child(1) a{*/
+    /*padding-top:0;*/
+/*}*/
 /*.leftBar- .bottom  li:nth-child(1) a span{*/
     /*display: inline-block;*/
     /*background: red;*/

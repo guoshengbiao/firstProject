@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    letter-spacing: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #666;
+}
+
+em {
+    width: 80px;
+    position: relative;
+    top: 38px;
+    left: 5px;
+    font-style: normal;
+}
+
+em, span, input {
+    display: block;
+}
+
+input {
+    outline: none;
+    width: 320px;
+    height: 46px;
+    line-height: 46px;
+    padding: 5px;
+    border: 1px solid #e1e1e1;
+    padding-left: 80px;
+}
+
+span {
+    width: 425px;
+    height: 25px;
+    line-height: 25px;
+
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    padding-top: 20px;;
+    border: 1px solid #f3f3f3;
+    box-shadow: 0 3px 8px #f3f3f3;
+    overflow: hidden;
+}
+
+.top {
+    width: 1210px;
+    height: 76px;
+    margin: 0 auto;
+}
+
+.logoImg {
+    float: left;
+    width: 160px;
+    height: 50px;
+    background: url("../img/icon.png") no-repeat;
+    overflow: hidden;
+}
+
+.wel {
+    float: left;
+    height: 33px;
+    line-height: 33px;
+    font-size: 18px;
+    color: #000;
+    border-left: solid 1px #bbb;
+    margin-left: 25px;
+    margin-top: 10px;
+    padding-left: 25px;
+    letter-spacing: 6px;
+}
+
+.login {
+    float: right;
+    width: 152px;
+    font-size: 17px;
+}
+
+.login a {
+    font-size: 17px;
+    color: #000;
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mid {
+    width: 830px;
+    margin: 0 auto;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+#register {
+    float: left;
+    width: 407px;
+    overflow: hidden;
+}
+
+#cp1 {
+    font-style: italic;
+    color: red;
+    position: relative;
+    top: -47px;
+    left: 260px;
+    width: 100px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 31px;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+#cp2 {
+    position: relative;
+    top: -35px;
+}
+
+#sure {
+    width: 388px;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+    background-color: red;
+    text-align: center;
+    color: #fff;
+}
+
+#repE {
+    position: relative;
+    top: 39px;
+}
+
+#upSure {
+    position: relative;
+    top: -2px;
+    color: red;
+    width: 300px;
+    height: 30px;
+    line-height: 30px;;
+    font-size: 18px;
+}
+
+#rightNow {
+    position: relative;
+    top: -45px;
+}
+
+.ok {
+    border: 1px solid green;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+#right {
+    float: left;
+    margin-left: 104px;
+    margin-top: 16px;
+    height: 605px;
+    padding-left: 90px;
+    border-left: solid 1px #e6e6e6;
+    overflow: hidden;
+
+}
+
+#mobile {
+    float: left;
+    width: 213px;
+    height: 270px;
+    background: url("../img/phone.jpg") no-repeat;
+}
+
+#company-reg {
+    width: 160px;
+    height: 60px;
+    margin-top: 359px;
+    border-bottom: solid 1px #ddd;
+    margin-left: 30px;
+}
+
+#company-reg i {
+    display: inline-block;
+    width: 30px;
+    height: 29px;
+    vertical-align: middle;
+    margin-right: 15px;
+    background: url("../img/icon.png") 0 -50px no-repeat;
+}
+
+#company-reg a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+}

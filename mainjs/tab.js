@@ -1,17 +1,20 @@
 /**
  * Created by tangsuan on 2016/5/2.
  */
-
+    //顶部旋转和中部搜索框购物车
     ~function(){
         var shopcar=document.getElementById("shopcar");
         var down=utils.children(shopcar,'div')[0];
         var num=utils.children(shopcar,'div')[1];
+        var top=utils.children(num,'i')[1];
         shopcar.onmouseenter=function(){
             down.style.display='block';
+            top.style.display='block';
             utils.addClass(num,'shoppingDown')
         };
         shopcar.onmouseleave=function(){
             down.style.display='none';
+            top.style.display='none';
             utils.removeClass(num,'shoppingDown')
         };
         var oLis=document.getElementById("header").getElementsByTagName("li");
@@ -235,17 +238,62 @@
 
         }();
 
-
-
-
-
-
-
-
-
-
-
-
-
     }();
+
+//最右边侧边栏
+~function(){
+    var ele=document.getElementById("elevator");
+    var eleUl=utils.children(ele,'ul')[0];
+    var liFeed=utils.getElementsByClass('feedback',eleUl)[0];
+    var liTop=utils.getElementsByClass('top',eleUl)[0];
+    var eleLis=ele.getElementsByTagName("li");
+    var flag=false;
+    window.onresize=function(){
+        var change=utils.win('clientHeight');
+        utils.css(liFeed,{top:change *.55-300});
+        utils.css(liTop,{top:change*.55-300});
+        utils.css(eleUl,{top:change *.45});console.log(change)
+    };
+    console.log(utils.win('clientHeight'));
+    for(var i=0;i<eleLis.length;i++){
+        var cur=eleLis[i];
+        if(utils.hasClass(cur,"hiddenBar")){
+            cur.onclick=function(){
+                var innerDiv=utils.children(this,'div')[0];
+                var em=utils.children(this,'em')[0];
+                if(this.flag&&flag){
+                    ele.style.right='-270px';
+                    this.flag=false;
+                    flag=true;
+                    utils.removeClass(innerDiv,'bg');
+                    em.style.left='0';
+                    return;
+                }
+                this.flag=true;flag=true;
+                ele.style.right='0';
+                innerDiv.className='bg';
+                em.style.left='0';
+            }
+        }else if(utils.hasClass(cur,"top")){
+
+            cur.onclick=function(){
+                utils.win('scrollTop',0);
+            }
+        }
+
+
+        cur.onmouseenter=function(){
+            var em=utils.children(this,'em')[0],div=utils.children(this,'div')[0];
+            em.style.left='-60px';
+            div.className='bg';
+        };
+        cur.onmouseleave=function(){
+            var em=utils.children(this,'em')[0],div=utils.children(this,'div')[0];
+            em.style.left='0';
+            setTimeout(function(){div.className='';},200);
+        }
+    }
+
+}();
+
 
